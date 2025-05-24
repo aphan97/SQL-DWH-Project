@@ -21,7 +21,7 @@ CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME --Declare variables to track duration of procedure
 	BEGIN TRY --Put entire procedure in try block for error handling
-		SET @batch_start_time =GETDATE();
+		SET @batch_start_time = GETDATE();
 		PRINT 'Loading Bronze Layer'; --Message to clarify procedure executed
 		PRINT 'Loading CRM Tables';
 
@@ -50,9 +50,9 @@ BEGIN
 		BULK INSERT bronze.crm_prd_info
 		FROM 'C:\Users\aphan\Documents\Career\SQL\2\Projects\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
 		WITH (
-			FIRSTROW = 2, --Since first row is the header, this tells SQL to start at the second row
-			FIELDTERMINATOR = ',', --Tells SQL how each row is separated in file
-			TABLOCK --Locks table while SQL is loading it. Improves performance
+			FIRSTROW = 2, 
+			FIELDTERMINATOR = ',', 
+			TABLOCK 
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time,@end_time) AS NVARCHAR) + ' seconds';
@@ -66,9 +66,9 @@ BEGIN
 		BULK INSERT bronze.crm_sales_details
 		FROM 'C:\Users\aphan\Documents\Career\SQL\2\Projects\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_crm\sales_details.csv'
 		WITH (
-			FIRSTROW = 2, --Since first row is the header, this tells SQL to start at the second row
-			FIELDTERMINATOR = ',', --Tells SQL how each row is separated in file
-			TABLOCK --Locks table while SQL is loading it. Improves performance
+			FIRSTROW = 2, 
+			FIELDTERMINATOR = ',', 
+			TABLOCK 
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time,@end_time) AS NVARCHAR) + ' seconds';
@@ -84,9 +84,9 @@ BEGIN
 		BULK INSERT bronze.erp_loc_a101
 		FROM 'C:\Users\aphan\Documents\Career\SQL\2\Projects\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv'
 		WITH (
-			FIRSTROW = 2, --Since first row is the header, this tells SQL to start at the second row
-			FIELDTERMINATOR = ',', --Tells SQL how each row is separated in file
-			TABLOCK --Locks table while SQL is loading it. Improves performance
+			FIRSTROW = 2, 
+			FIELDTERMINATOR = ',', 
+			TABLOCK 
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time,@end_time) AS NVARCHAR) + ' seconds';
@@ -100,9 +100,9 @@ BEGIN
 		BULK INSERT bronze.erp_cust_az12
 		FROM 'C:\Users\aphan\Documents\Career\SQL\2\Projects\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\cust_az12.csv'
 		WITH (
-			FIRSTROW = 2, --Since first row is the header, this tells SQL to start at the second row
-			FIELDTERMINATOR = ',', --Tells SQL how each row is separated in file
-			TABLOCK --Locks table while SQL is loading it. Improves performance
+			FIRSTROW = 2, 
+			FIELDTERMINATOR = ',', 
+			TABLOCK 
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time,@end_time) AS NVARCHAR) + ' seconds';
@@ -116,9 +116,9 @@ BEGIN
 		BULK INSERT bronze.erp_px_cat_g1v2
 		FROM 'C:\Users\aphan\Documents\Career\SQL\2\Projects\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\px_cat_g1v2.csv'
 		WITH (
-			FIRSTROW = 2, --Since first row is the header, this tells SQL to start at the second row
-			FIELDTERMINATOR = ',', --Tells SQL how each row is separated in file
-			TABLOCK --Locks table while SQL is loading it. Improves performance
+			FIRSTROW = 2, 
+			FIELDTERMINATOR = ',', 
+			TABLOCK 
 		);
 		SET @end_time = GETDATE();
 		PRINT '>> Load Duration: ' + CAST(DATEDIFF(second, @start_time,@end_time) AS NVARCHAR) + ' seconds';
