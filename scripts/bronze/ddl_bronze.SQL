@@ -7,16 +7,17 @@
 		Run script to redefine DDL structure of 'bronze' tables
 */
 /*
-	Analysing:
+STEPS:
+	-Analysing:
 		-Interview source system experts
-	Coding:
+	-Coding:
 		-Data ingestion: Find a way to load the data from source into DWH
-	Validation:
+	-Validation:
 		-Data completeness and schema check (quality control)
 		-Schema: a collection of rules that the database will enforce for you. This is beneficial because 
 				 it allows you to ensure that all of the schema data in your database is valid and that 
 				 relationships are enforced without having to add application code to enforce those rules.
-	Docs & Version:
+	-Docs & Version:
 		-Data documenting versioning in GIT
 */
 
