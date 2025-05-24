@@ -1,5 +1,11 @@
 --BRONZE LAYER
+/*
+	DDL Script: Creating Bronze Table
 
+	Script Purpose:
+		Creates tables in the 'bronze' schema, dropping existing tables if they already exist.
+		Run script to redefine DDL structure of 'bronze' tables
+*/
 /*
 	Analysing:
 		-Interview source system experts
